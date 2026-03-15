@@ -7,7 +7,7 @@ A mobile-friendly progressive web app for tracking Ranking Points (RP) during FT
 - **Pattern Selector** — Cycle through PPG / PGP / GPP with a single tap
 - **Auto & Tele-Op Ramps** — 9-position ramp grids with auto-fill logic (tapping position N automatically fills positions 1–N-1 with purple)
 - **Goal Counter** — Large tap-to-increment button tracks balls through the Square; small decrement button for corrections
-- **Progress Bars** — Live Pattern RP (threshold: 18) and Goal RP (threshold: 36) indicators
+- **Progress Bars** — Live Pattern RP (threshold: 22) and Goal RP (threshold: 36) indicators
 - **Match Reset** — Clears everything with a confirmation prompt
 
 ## Tech Stack
