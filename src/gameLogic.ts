@@ -3,7 +3,7 @@ export type Pattern = 'PPG' | 'PGP' | 'GPP';
 export type RampState = ArtifactColor[];
 
 export const RAMP_SIZE = 9;
-export const PATTERN_RP_THRESHOLD = 18;
+export const PATTERN_RP_THRESHOLD = 22;
 export const GOAL_RP_THRESHOLD = 36;
 
 export const PATTERNS: Pattern[] = ['PPG', 'PGP', 'GPP'];
