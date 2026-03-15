@@ -1,0 +1,118 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #cbd5e1;
+}
+
+.clearBtn {
+  font-size: 0.65rem;
+  padding: 3px 10px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  color: #fca5a5;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.15s;
+}
+
+.clearBtn:active {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 4px;
+}
+
+/* Two-layer trick: wrapper enforces aspect-ratio, button fills it absolutely */
+.cellWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.cell {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.12s, border-color 0.12s, transform 0.08s;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+}
+
+.cell:active {
+  transform: scale(0.92);
+}
+
+.cell.blank {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.cell.purple {
+  background: rgba(124, 58, 237, 0.5);
+  border-color: #7c3aed;
+}
+
+.cell.green {
+  background: rgba(22, 163, 74, 0.5);
+  border-color: #16a34a;
+}
+
+.cell.match {
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+}
+
+.cell.mismatch {
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+  opacity: 0.8;
+}
+
+.posNum {
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.colorIndicator {
+  font-size: clamp(0.7rem, 4vw, 1.1rem);
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.cell.purple .colorIndicator {
+  color: #d8b4fe;
+}
+
+.cell.green .colorIndicator {
+  color: #86efac;
+}
