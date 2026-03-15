@@ -10,11 +10,10 @@ export const PATTERNS: Pattern[] = ['PPG', 'PGP', 'GPP'];
 
 /** Returns the expected color for each ramp index given a pattern.
  *  Index 0 = bottom of ramp (position 1), index 8 = top (position 9).
- *  Pattern letters map to positions in groups of 3: first 3, middle 3, last 3.
+ *  The 3-letter pattern repeats across all 9 positions (e.g. PPG → PPGPPGPPG).
  */
 export function patternColorAt(pattern: Pattern, index: number): 'purple' | 'green' {
-  const group = Math.floor(index / 3); // 0, 1, or 2
-  const letter = pattern[group]; // 'P' or 'G'
+  const letter = pattern[index % 3]; // repeating pattern
   return letter === 'P' ? 'purple' : 'green';
 }
 
